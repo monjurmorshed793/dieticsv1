@@ -8,12 +8,13 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+import {AuthGuardService} from "./security/auth-guard/auth-guard.service";
 
 export const routes: Routes = [
   {
     path: '',
     redirectTo: 'dashboard',
-    pathMatch: 'full',
+    pathMatch: 'full'
   },
   {
     path: '404',
@@ -49,6 +50,7 @@ export const routes: Routes = [
     data: {
       title: 'Home'
     },
+    canActivate: [AuthGuardService],
     children: [
       {
         path: 'base',
