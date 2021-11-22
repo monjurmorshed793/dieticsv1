@@ -10,7 +10,7 @@ export class AuthGuardService implements CanActivate{
   constructor(private router: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if(localStorage.getItem("currentUser")){
+    if(localStorage.getItem("token")){
       return true;
     }
     this.router.navigate(['/login'], {queryParams: {returnUrl: state.url}});

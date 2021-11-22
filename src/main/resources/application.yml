@@ -1,0 +1,28 @@
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: DEBUG
+#    org.springframework.boot.autoconfigure: DEBUG
+jwt:
+  private.key: classpath:app.key
+  public.key: classpath:app.pub
+
+
+spring:
+  devtools:
+    livereload:
+      enabled: true
+
+  data:
+    mongodb:
+#      host: localhost
+#      port: 27017
+      database: admin
+#      username: user
+#      password: password
+      uri: mongodb://user:password@localhost:27017/?waitQueueMultiple=1000
+
+mongock:
+  change-logs-scan-package:
+    - com.morshed.dietics.migration
