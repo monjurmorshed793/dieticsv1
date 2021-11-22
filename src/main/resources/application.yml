@@ -11,3 +11,11 @@ spring:
   devtools:
     livereload:
       enabled: true
+
+  data:
+    mongodb:
+      host: localhost
+      port: 8099
+      database: dietics
+      username: user
+      password: password
