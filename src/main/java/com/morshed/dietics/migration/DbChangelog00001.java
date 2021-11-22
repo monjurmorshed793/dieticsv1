@@ -1,7 +1,8 @@
 package com.morshed.dietics.migration;
 
-import com.github.mongobee.changeset.ChangeLog;
-import com.github.mongobee.changeset.ChangeSet;
+import com.github.cloudyrock.mongock.ChangeLog;
+import com.github.cloudyrock.mongock.ChangeSet;
+import com.github.cloudyrock.mongock.driver.mongodb.springdata.v3.decorator.impl.MongockTemplate;
 import com.morshed.dietics.model.Role;
 import com.morshed.dietics.model.User;
 import com.morshed.dietics.model.UserRole;
@@ -16,17 +17,17 @@ import java.util.List;
 @Slf4j
 public class DbChangelog00001 {
   @ChangeSet(order = "001", id="seedUserRoles", author = "Monjur-E-Morshed")
-  public void seedUserRoles(MongoTemplate mongoTemplate){
+  public void seedUserRoles(MongockTemplate mongoTemplate){
     Role userRole = Role.builder()
       .name("ROLE_USER")
       .build();
     userRole = mongoTemplate.insert(userRole);
     Role dieticianRole = Role.builder()
-      .name("DIETICIAN")
+      .name("ROLE_DIETICIAN")
       .build();
     dieticianRole = mongoTemplate.insert(dieticianRole);
     Role adminRole = Role.builder()
-      .name("ADMIN")
+      .name("ROLE_ADMIN")
       .build();
     adminRole = mongoTemplate.insert(adminRole);
 

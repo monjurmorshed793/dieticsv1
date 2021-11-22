@@ -9,6 +9,7 @@ import javax.validation.constraints.NotNull;
 
 @Document
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @Builder

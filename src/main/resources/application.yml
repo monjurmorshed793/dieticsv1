@@ -14,8 +14,13 @@ spring:
 
   data:
     mongodb:
-      host: localhost
-      port: 8099
-      database: dietics
-      username: user
-      password: password
+#      host: localhost
+#      port: 27017
+      database: admin
+#      username: user
+#      password: password
+      uri: mongodb://user:password@localhost:27017/?waitQueueMultiple=1000
+
+mongock:
+  change-logs-scan-package:
+    - com.morshed.dietics.migration
