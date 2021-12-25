@@ -16,7 +16,7 @@ public class CustomUserDetails extends User implements UserDetails {
   List<UserRole> userRoles;
   User user;
   CustomUserDetails(User user, List<UserRole> userRoles){
-    super(user.getId(), user.getUsername(), user.getPassword(), user.getEmail(), user.getIsActive());
+    super(user.getId(), user.getFirstName(), user.getLastname(), user.getUsername(), user.getPassword(), user.getEmail(), user.getIsActive());
     this.user = user;
     this.userRoles = userRoles;
   }
